@@ -1,0 +1,15 @@
+
+public class ExemploArray2 {
+
+	public static void main(String[] args) {
+		String [][] tabuleiro = {
+				{".",".","."},
+				{".","X","."},
+				{".","O","."},
+		};
+		System.out.print(tabuleiro[0][0]);	
+		System.out.print(tabuleiro[0][1]);						
+		
+	}
+
+}
