@@ -1,0 +1,22 @@
+/*
+4.Faça um programa que receba o salário de um funcionário, 
+calcule e mostre o novo salário,
+sabendo-se que este sofreu um aumento de 25%.
+*/
+import java.util.Scanner;  // Importando a Classe Scanner
+public class Lista_01_04 {
+
+	public static void main(String[] args) {
+		float salario;
+		Scanner meuScanner = new Scanner(System.in);  // Cria um objeto Scanner	
+
+		System.out.print("Salário: ");
+		salario = meuScanner.nextFloat();
+		
+		System.out.printf("%s%5.2f", "Salário + 25%: " , 
+				(salario * 1.25f ) );	
+
+		
+	}
+
+}

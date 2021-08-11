@@ -1,0 +1,15 @@
+import java.util.Scanner;  // Importando a Classe Scanner
+public class ExemploDoWhile {
+	public static void main(String[] args) {
+		int i=0;
+		do {
+			
+			if (i % 2 == 0) {
+				System.out.printf("i é par =%d\n", i);
+			} else {
+				System.out.printf("i é ímpar =%d\n", i);
+			}
+		
+		} while (i=0) ;
+	}
+}

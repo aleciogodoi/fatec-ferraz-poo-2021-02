@@ -1,0 +1,22 @@
+/*
+5.Faça um programa que receba o salário
+de um funcionário e o percentual de aumento, calcule e mostre
+o valor do aumento e o novo salário.
+*/
+import java.util.Scanner;
+public class Lista_01_05 {
+	public static void main(String[] args) {
+		float salario, percentual;
+		Scanner meuScanner = new Scanner(System.in);  // Cria um objeto Scanner	
+
+		System.out.print("Salário: ");
+		salario = meuScanner.nextFloat();
+		
+		System.out.print("Percentual: ");
+		percentual = meuScanner.nextFloat();
+		
+		System.out.printf("%s%5.2f%s%5.2f", "Salário + ", percentual , "% = ", 
+				(salario * percentual / 100 ) );	
+	
+	}
+}

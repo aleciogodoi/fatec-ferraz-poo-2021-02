@@ -1,0 +1,12 @@
+
+public class ExemploArray {
+
+	public static void main(String[] args) {
+		String[] nomes = {"Ana","Beatriz","Carlos","Pedro"};
+		System.out.println(nomes);
+		System.out.println("Tamanho array: "+nomes.length);
+		for(int i=0; i < nomes.length; i++)
+			System.out.println(nomes[i]);
+	}
+
+}

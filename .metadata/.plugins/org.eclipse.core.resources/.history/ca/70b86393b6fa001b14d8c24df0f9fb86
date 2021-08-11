@@ -1,0 +1,9 @@
+
+public class ExemploArray {
+
+	public static void main(String[] args) {
+		String[] nomes = {"Ana","Beatriz","Carlos","Pedro"};
+		System.out.println(nomes);
+	}
+
+}
