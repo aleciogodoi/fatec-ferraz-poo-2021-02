@@ -1,3 +1,4 @@
+
 public class TestaCirculos
 {
 	public static void main(String[] args) {
@@ -23,5 +24,15 @@ public class TestaCirculos
 		
 		System.out.print("Circulo 2 -> ");
 		circulo2.imprimir();
+		
+		System.out.println("Circulo 2 -> raio: "+ circulo2.raio);
+		System.out.println("Circulo 2 -> x: "+ circulo2.x);
+		
+		circulo2.y = 10f;
+		circulo2.imprimir();
+	
+		circulo1.y = 7f;
+		circulo1.imprimir();
+		
 	}
 }
