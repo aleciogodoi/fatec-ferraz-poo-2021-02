@@ -14,9 +14,9 @@ public class Aluno {
 	Aluno(String nom, String mat, double n1, double n2, double nReavaliacao ){
 		nome = nom;
 		matricula = mat;
-		nota1 = n1;
-		nota2 = n2;
-		notaReavaliacao = nReavaliacao;
+		setNota1(n1);
+		setNota2(n2);
+		setNotaReavaliacao(nReavaliacao);
 		aprovado = (calcularMediaFinal() >=  6);
 	}
 	
@@ -58,15 +58,27 @@ public class Aluno {
 	}
 
 	public void setNota1(double n) {
-		nota1 = n;
-		aprovado = (calcularMediaFinal() >=  6);
+		if (n >=0 && n <=10) {
+			nota1 = n;
+			aprovado = (calcularMediaFinal() >=  6);
+		} else {
+			System.out.println("Nota1 incorreta!!!");
+		}
 	}
 	public void setNota2(double n) {
-		nota2 = n;
-		aprovado = (calcularMediaFinal() >=  6);
+		if (n >=0 && n <=10) {
+			nota2 = n;
+			aprovado = (calcularMediaFinal() >=  6);
+		} else {
+			System.out.println("Nota2 incorreta!!!");
+		}
 	}
 	public void setNotaReavaliacao(double n) {
-		notaReavaliacao = n;
-		aprovado = (calcularMediaFinal() >=  6);
+		if (n >=0 && n <=10) {
+			notaReavaliacao = n;
+			aprovado = (calcularMediaFinal() >=  6);
+		} else {
+			System.out.println("Nota Reavaliação incorreta!!!");
+		}
 	}
 }

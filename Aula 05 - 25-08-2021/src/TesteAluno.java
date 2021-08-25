@@ -18,7 +18,10 @@ public class TesteAluno {
 		System.out.println("Média Final:" + aluno03.calcularMediaFinal());
 		System.out.println(aluno03.toString());
 		System.out.println(aluno03.getAprovado());
+		aluno03.setNotaReavaliacao(70.5);
+		System.out.println(aluno03.toString());
 		aluno03.setNotaReavaliacao(7.5);
+
 		System.out.println(aluno03.toString());
 	}
 }
