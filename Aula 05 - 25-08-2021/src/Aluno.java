@@ -1,4 +1,3 @@
-
 public class Aluno {
 	// Atributos
 	String nome;
@@ -23,9 +22,20 @@ public class Aluno {
 	public String toString() {
 		return "Aluno [Nome: "+nome +", Matricula: "+matricula
 				+ ", Nota 1: "+ nota1 + ", Nota 2: "+ nota2 
-				+ ", Nota Reavaliação: "+ notaReavaliacao + "]";
+				+ ", Nota Reavaliação: "+ notaReavaliacao
+				+ ", Média:" + calcularMedia() 
+				+ ", Média Final:" + calcularMediaFinal() + "]";
 	}
-	//calcularMedia(): double
-	//calcularMediaFinal(): double
+	
+	public double calcularMedia() {
+		return (nota1 + nota2 ) / 2;
+	}
+
+	public double calcularMediaFinal() {
+		if (calcularMedia() >= 6) 
+			return calcularMedia();
+		else
+			return ( calcularMedia() + notaReavaliacao ) / 2;
+	}
 
 }
