@@ -2,9 +2,10 @@ public class Aluno {
 	// Atributos
 	String nome;
 	String matricula;
-	double nota1;
-	double nota2;
-	double notaReavaliacao; 
+	private double nota1;
+	private double nota2;
+	private double notaReavaliacao; 
+	private boolean aprovado;
 	
 	// Construtor
 	Aluno() {
@@ -16,6 +17,7 @@ public class Aluno {
 		nota1 = n1;
 		nota2 = n2;
 		notaReavaliacao = nReavaliacao;
+		aprovado = (calcularMediaFinal() >=  6);
 	}
 	
 	@Override
@@ -24,7 +26,8 @@ public class Aluno {
 				+ ", Nota 1: "+ nota1 + ", Nota 2: "+ nota2 
 				+ ", Nota Reavaliação: "+ notaReavaliacao
 				+ ", Média:" + calcularMedia() 
-				+ ", Média Final:" + calcularMediaFinal() + "]";
+				+ ", Média Final:" + calcularMediaFinal() 
+				+ ", Aprovado: "+ aprovado +"]";
 	}
 	
 	public double calcularMedia() {
@@ -37,5 +40,33 @@ public class Aluno {
 		else
 			return ( calcularMedia() + notaReavaliacao ) / 2;
 	}
+	
+	public boolean getAprovado() {
+		return aprovado;
+	}
 
+	public double getNota1() {
+		return nota1;
+	}
+
+	public double getNota2() {
+		return nota2;
+	}
+
+	public double getNotaReavaliacao() {
+		return notaReavaliacao;
+	}
+
+	public void setNota1(double n) {
+		nota1 = n;
+		aprovado = (calcularMediaFinal() >=  6);
+	}
+	public void setNota2(double n) {
+		nota2 = n;
+		aprovado = (calcularMediaFinal() >=  6);
+	}
+	public void setNotaReavaliacao(double n) {
+		notaReavaliacao = n;
+		aprovado = (calcularMediaFinal() >=  6);
+	}
 }
