@@ -1,8 +1,8 @@
 public class Pessoa {
 	// Atributos
-	String nome;
-	String identidade;
-	Data dtNascimento;
+	private String nome;
+	private String identidade;
+	private Data dtNascimento;
 	// Construtores
 	public Pessoa() {
 	}
