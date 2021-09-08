@@ -1,9 +1,8 @@
-
 public class Main {
-
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		Data d01 = new Data();
+		Data d02 = new Data(8, 9, 2021);
+		System.out.println(d01);
+		System.out.println(d02);
 	}
-
 }
