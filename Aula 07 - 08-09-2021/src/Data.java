@@ -28,10 +28,8 @@ public class Data {
 	public void setAno(int ano) {
 		this.ano = ano;
 	}
-
 	@Override
 	public String toString() {
 		return "Data [dia=" + dia + ", mes=" + mes + ", ano=" + ano + "]";
 	}
-	
 }
