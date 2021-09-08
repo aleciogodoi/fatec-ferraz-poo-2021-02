@@ -4,5 +4,8 @@ public class Main {
 		Data d02 = new Data(8, 9, 2021);
 		System.out.println(d01);
 		System.out.println(d02);
+		
+		Pessoa p01 = new Pessoa("Pedro", "2109876-09", new Data (23,10,1987));
+		System.out.println(p01);
 	}
 }
