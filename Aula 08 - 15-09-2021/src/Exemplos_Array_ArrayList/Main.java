@@ -39,10 +39,26 @@ public class Main {
 				break;
 			carros.add(dado);
 		}
+		meuScanner.close();
 		
 		System.out.println(carros);
 		System.out.println("Tamanho lista de carros: "+carros.size());
+		System.out.println(carros.get(0));		
+		System.out.println(carros.get(3));
+		carros.set(0, "Ferrari");
+		System.out.println(carros);		
+		System.out.println(carros.get(0));		
 
+		for (int i=0; i < carros.size(); i++ ) {
+			System.out.println(carros.get(i));
+		}
+			
+		carros.remove(0);
+		System.out.println(carros);		
+		carros.clear();
+		System.out.println(carros);				
+
+		
 	}
 
 }
