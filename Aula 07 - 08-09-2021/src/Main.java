@@ -17,5 +17,7 @@ public class Main {
 		Funcionario func01 = new Funcionario("Antonio","547654-12",new Data(5,3,1990), new Data(8,2,2018), 5542.43f);
 		System.out.println(func01);
 		
+		Gerente ger01 = new Gerente("Maria","121217-44",new Data(3,9,1982), new Data(7,4,2017), 15543.55f, "TI", new Data(1, 1, 2021));
+		System.out.println(ger01);
 	}
 }
