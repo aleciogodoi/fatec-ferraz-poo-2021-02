@@ -52,6 +52,17 @@ public class DespesaPessoal {
 		return total;		
 	}
 	
+	public void imprime() {
+	    System.out.println("\n-----------------------------------------------------");
+	    System.out.println("Despesas (Total)");
+	    System.out.println("-----------------------------------------------------");
+	    for (Despesa despesa: this.getDespesas()) {
+	        System.out.println(despesa.getData()+" "+despesa.getDescDespesa()+ " "+ despesa.getValor());
+	    }
+	    System.out.println("-----------------------------------------------------");
+	    System.out.println("Total: "+this.getTotal());
+	}
+	
 	@Override
 	public String toString() {
 		return "DespesaPessoal [cpf=" + cpf + ", despesas=" + despesas + "]";
