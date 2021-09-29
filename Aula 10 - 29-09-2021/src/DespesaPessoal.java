@@ -25,6 +25,14 @@ public class DespesaPessoal {
 		this.despesas = despesas;
 	}
 
+	public double getTotal() {
+		double total=0;
+		for (Despesa despesa: this.getDespesas()) {
+			total += despesa.getValor();
+		}
+		return total;
+	}
+	
 	@Override
 	public String toString() {
 		return "DespesaPessoal [cpf=" + cpf + ", despesas=" + despesas + "]";
