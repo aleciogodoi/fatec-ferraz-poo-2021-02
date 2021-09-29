@@ -21,6 +21,12 @@ public class Operacao {
 		return a + b;
 	}
 	
+	public static int soma(int[] n) {
+		int total=0;
+		for (int i=0; i < n.length; i++) 
+			total+=n[i];
+		return total;
+	}
 	// Sobrescrita
 	@Override
 	public String toString() {
