@@ -18,6 +18,7 @@ public class Main {
 		dp01.imprime();
 		dp01.imprime(8, 2021);
 		dp01.imprime(9, 2021);
+		dp01.imprime(LocalDate.of(2021, 9, 21));
 		
 	/*	System.out.println(dp01);
 		System.out.println("Total despesas geral: "+dp01.getTotal());
