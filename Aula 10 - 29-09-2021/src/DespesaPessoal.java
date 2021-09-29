@@ -33,6 +33,15 @@ public class DespesaPessoal {
 		return total;
 	}
 	
+	public double getTotal(int mes, int ano) {
+		double total=0;
+		for (Despesa despesa: this.getDespesas()) {
+			if (despesa.getData().getMonthValue() == mes && despesa.getData().getYear() == ano)
+				total += despesa.getValor();
+		}
+		return total;
+	}
+	
 	@Override
 	public String toString() {
 		return "DespesaPessoal [cpf=" + cpf + ", despesas=" + despesas + "]";
