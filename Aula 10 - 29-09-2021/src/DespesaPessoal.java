@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class DespesaPessoal {
@@ -40,6 +41,15 @@ public class DespesaPessoal {
 				total += despesa.getValor();
 		}
 		return total;
+	}
+	
+	public double getTotal(LocalDate data) {
+		double total=0;
+		for (Despesa despesa: this.getDespesas()) {
+			if (despesa.getData().equals(data))
+				total += despesa.getValor();
+		}
+		return total;		
 	}
 	
 	@Override
