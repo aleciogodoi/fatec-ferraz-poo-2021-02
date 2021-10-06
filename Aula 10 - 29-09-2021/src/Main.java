@@ -1,35 +1,52 @@
 import java.time.LocalDate;
+import java.util.Scanner;
 
 public class Main {
-	public static void main(String[] args) {
-		Despesa desp01 = new Despesa(LocalDate.of(2021, 9, 29), "Conta de Luz", 87.65);
-		//System.out.println(desp01);
+	private static int dia;
+	private static int ano;
+	private static int mes;
+	private static String itemDespesa;
+	private static double valor;
+	private static DespesaPessoal despesa;
+	private Scanner meuScanner = new Scanner(System.in); 
+	Main(){
 		
-		DespesaPessoal dp01 = new DespesaPessoal("12309876-09");
-		dp01.getDespesas().add(desp01);
-		dp01.getDespesas().add(new Despesa(LocalDate.of(2021, 8, 20), "Conta de água", 70.23));
-		dp01.getDespesas().add(new Despesa(LocalDate.of(2021, 8, 21), "Mercado", 125.55));
-		dp01.getDespesas().add(new Despesa(LocalDate.of(2021, 8, 21), "Feira", 30.43));
-		dp01.getDespesas().add(new Despesa(LocalDate.of(2021, 8, 22), "Padaria", 10.07));
-		dp01.getDespesas().add(new Despesa(LocalDate.of(2021, 9, 20), "Conta de água", 70.23));
-		dp01.getDespesas().add(new Despesa(LocalDate.of(2021, 9, 21), "Mercado", 125.55));
-		dp01.getDespesas().add(new Despesa(LocalDate.of(2021, 9, 21), "Feira", 30.43));
-		dp01.getDespesas().add(new Despesa(LocalDate.of(2021, 9, 22), "Padaria", 10.07));
-		dp01.imprime();
-		dp01.imprime(8, 2021);
-		dp01.imprime(9, 2021);
-		dp01.imprime(LocalDate.of(2021, 9, 21));
+		System.out.print("CPF: ");
+		String cpf = meuScanner.next();
+		despesa = new DespesaPessoal(cpf);
+
+	}
+	
+	public static void main(String[] args) {	
+		Main controle = new Main();
+		controle.controleDespesas();
+	}
+	
+	public void controleDespesas(){
+		int opcao=0;
+		String menu;
+		menu = 	  "\n1 - Lançamento de despesa\n"
+				+ "2 - Total geral de despesas\n"
+				+ "3 - Total de despesas mês/ano\n"
+				+ "4 - Total de despesas dia/mês/ano\n"
+				+ "5 - Imprimir todas as despesas\n"
+				+ "6 - Imprimir despesas mês/ano\n"
+				+ "7 - Imprimir despesas dia/mês/ano\n"
+				+ "0 - Sair";
 		
-	/*	System.out.println(dp01);
-		System.out.println("Total despesas geral: "+dp01.getTotal());
-		System.out.println("Total despesas 08/2021: "+dp01.getTotal(8, 2021));
-		System.out.println("Total despesas 09/2021: "+dp01.getTotal(9, 2021));
-		System.out.println("Total despesas 10/09/2021: "+dp01.getTotal(LocalDate.of(2021, 9, 10)));
-		System.out.println("Total despesas 20/09/2021: "+dp01.getTotal(LocalDate.of(2021, 9, 20)));
-		System.out.println("Total despesas 21/09/2021: "+dp01.getTotal(LocalDate.of(2021, 9, 21)));
-		System.out.println("Total despesas 29/09/2021: "+dp01.getTotal(LocalDate.of(2021, 9, 29)));
-		*/
-		
-		
+		do {
+			System.out.println(menu);
+			System.out.print("Opção: ");
+			opcao = meuScanner.nextInt();
+		} while(opcao != 8);
+		meuScanner.close();
+		System.out.println("F I M");
+	}
+
+	public void entradaDia() {	
+	}
+	public void entradaMes() {	
+	}
+	public void entradaAno() {	
 	}
 }
