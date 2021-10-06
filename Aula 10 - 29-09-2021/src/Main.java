@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.Random;
 import java.util.Scanner;
 
 public class Main {
@@ -48,6 +49,7 @@ public class Main {
 				totalMesAno() ;
 				break;
 			case 4:
+				totalDiaMesAno() ;
 				break;
 			case 5:
 				despesa.imprime();
@@ -58,6 +60,10 @@ public class Main {
 				despesa.imprime(mes, ano);
 				break;
 			case 7:
+				entradaDia();
+				entradaMes();
+				entradaAno();
+				despesa.imprime(LocalDate.of(ano, mes, dia));				
 				break;
 			}
 		} while(opcao != 0);
@@ -77,6 +83,17 @@ public class Main {
 		valor = meuScanner.nextDouble();
 		despesa.getDespesas().add(new Despesa(LocalDate.of(ano, mes, dia), itemDespesa, valor ));
 	}
+	
+	public static void totalDiaMesAno() {
+		entradaDia();
+		entradaMes();
+		entradaAno();
+		System.out.println("\n-----------------------------------------------------");
+	    System.out.println("Despesas - CPF: "+despesa.getCpf());
+		System.out.println("-----------------------------------------------------");
+		System.out.printf("Total %s: %.2f",(dia+"/"+mes+"/"+ano),despesa.getTotal(LocalDate.of(ano, mes, dia)));
+		System.out.println("\n-----------------------------------------------------");		
+	}	
 	
 	public static void totalMesAno() {
 		entradaMes();
@@ -109,78 +126,34 @@ public class Main {
 	}
 	
 	public static void cargaInicial() {
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 1, 1), "Mercado", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 2, 1), "Mercado", 50.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 3, 1), "Mercado", 200.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 4, 1), "Mercado", 340.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 5, 1), "Mercado", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 6, 1), "Mercado", 205.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 7, 1), "Mercado", 431.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 8, 1), "Mercado", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 9, 1), "Mercado", 222.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 10, 1), "Mercado", 333.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 11, 1), "Mercado", 203.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 12, 1), "Mercado", 500.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 1, 1), "Farmacia", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 2, 1), "Farmacia", 50.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 3, 1), "Farmacia", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 4, 1), "Farmacia", 30.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 5, 1), "Farmacia", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 6, 1), "Farmacia", 20.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 7, 1), "Farmacia", 431.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 8, 1), "Farmacia", 43.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 9, 1), "Farmacia", 78.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 10, 1), "Farmacia", 38.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 11, 1), "Farmacia", 21.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 12, 1), "Farmacia", 55.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 1, 1), "Feira", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 2, 1), "Feira", 50.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 3, 1), "Feira", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 4, 1), "Feira", 30.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 5, 1), "Feira", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 6, 1), "Feira", 20.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 7, 1), "Feira", 431.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 8, 1), "Feira", 43.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 9, 1), "Feira", 78.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 10, 1), "Feira", 38.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 11, 1), "Feira", 21.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2020, 12, 1), "Feira", 55.32));
-
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 1, 1), "Mercado", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 2, 1), "Mercado", 50.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 3, 1), "Mercado", 200.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 4, 1), "Mercado", 340.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 5, 1), "Mercado", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 6, 1), "Mercado", 205.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 7, 1), "Mercado", 431.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 8, 1), "Mercado", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 9, 1), "Mercado", 222.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 10, 1), "Mercado", 333.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 11, 1), "Mercado", 203.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 12, 1), "Mercado", 500.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 1, 1), "Farmacia", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 2, 1), "Farmacia", 50.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 3, 1), "Farmacia", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 4, 1), "Farmacia", 30.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 5, 1), "Farmacia", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 6, 1), "Farmacia", 20.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 7, 1), "Farmacia", 431.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 8, 1), "Farmacia", 43.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 9, 1), "Farmacia", 78.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 10, 1), "Farmacia", 38.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 11, 1), "Farmacia", 21.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 12, 1), "Farmacia", 55.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 1, 1), "Feira", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 2, 1), "Feira", 50.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 3, 1), "Feira", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 4, 1), "Feira", 30.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 5, 1), "Feira", 100.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 6, 1), "Feira", 20.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 7, 1), "Feira", 431.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 8, 1), "Feira", 43.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 9, 1), "Feira", 78.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 10, 1), "Feira", 38.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 11, 1), "Feira", 21.32));
-		despesa.getDespesas().add(new Despesa (LocalDate.of(2021, 12, 1), "Feira", 55.32));	
+		String[] item = {"Luz", "Internet", "Telefone", "Gas", "Feira", 
+							 "Mercado", "Agua", "Famarcia", "Transporte", "Padaria", "Outras"};
+		
+		int[] ano = {2019, 2020, 2021};
+		
+		Random rnd = new Random();
+		
+		int numeroSorteado=0;
+		int anoSorteado=0;
+		int diaSorteado=0;
+		int mesSorteado=0;
+		
+		double valorSorteado=0;
+		for (int i = 1; i <= 200; i++) {
+			numeroSorteado = rnd.nextInt(item.length);
+			valorSorteado = rnd.nextDouble()*100;
+			anoSorteado = rnd.nextInt(ano.length);
+			mesSorteado = rnd.nextInt(12)+1;
+			diaSorteado = rnd.nextInt(28)+1;
+			//System.out.println(item[numeroSorteado]+ ", valor: "+valorSorteado+
+			//		", ano: "+ano[anoSorteado]+ ", mês: "+ mesSorteado + ", dia: "+ diaSorteado);
+			despesa.getDespesas().add(
+					new Despesa (
+						LocalDate.of(ano[anoSorteado], mesSorteado, diaSorteado),
+						item[numeroSorteado], 
+						valorSorteado)
+			);
+		}
+		
 	}
 }
