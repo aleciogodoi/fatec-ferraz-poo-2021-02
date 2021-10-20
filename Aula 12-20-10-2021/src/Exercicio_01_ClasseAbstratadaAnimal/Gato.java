@@ -1,6 +1,6 @@
 package Exercicio_01_ClasseAbstratadaAnimal;
 
-public class Gato extends Mamifero {
+public class Gato extends Mamifero implements AnimalDomesticado, AnimalEstimacao {
 
 	private String raca;
 	
@@ -23,6 +23,26 @@ public class Gato extends Mamifero {
 	@Override
 	public void emitirSom() {
 		System.out.println("Miau!");		
+	}
+
+	@Override
+	public void levarVeteriano() {
+		System.out.println("Indo ao veterinário...");	
+	}
+
+	@Override
+	public void alimentar() {
+		System.out.println("Tomando meu leite...");	
+	}
+
+	@Override
+	public void bricar() {
+		System.out.println("Brincando...");			
+	}
+
+	@Override
+	public void levarPassear() {
+		System.out.println("Dando uma volta...");					
 	}
 
 }

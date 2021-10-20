@@ -8,6 +8,18 @@ public class Main {
 		Gato bichano = new Gato();
 		bichano.amamentar();
 		bichano.emitirSom();
+		
+		Papagaio louroJose = new Papagaio();
+		louroJose.emitirSom();
+		louroJose.voar();
+		
+		Cavalo silver = new Cavalo();
+		silver.amamentar();
+		silver.emitirSom();
+		
+		Cachorro viraLata = new Cachorro();
+		viraLata.amamentar();
+		viraLata.emitirSom();
 	}
 
 }
