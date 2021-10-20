@@ -8,6 +8,10 @@ public class Main {
 		Gato bichano = new Gato();
 		bichano.amamentar();
 		bichano.emitirSom();
+		bichano.alimentar();
+		bichano.brincar();
+		bichano.levarPassear();
+		bichano.levarVeteriano();
 		
 		Papagaio louroJose = new Papagaio();
 		louroJose.emitirSom();

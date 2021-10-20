@@ -36,7 +36,7 @@ public class Gato extends Mamifero implements AnimalDomesticado, AnimalEstimacao
 	}
 
 	@Override
-	public void bricar() {
+	public void brincar() {
 		System.out.println("Brincando...");			
 	}
 
