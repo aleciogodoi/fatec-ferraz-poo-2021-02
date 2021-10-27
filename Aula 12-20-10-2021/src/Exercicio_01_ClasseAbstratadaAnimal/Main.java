@@ -12,18 +12,29 @@ public class Main {
 		bichano.brincar();
 		bichano.levarPassear();
 		bichano.levarVeteriano();
+		System.out.println();
 		
 		Papagaio louroJose = new Papagaio();
 		louroJose.emitirSom();
 		louroJose.voar();
+		System.out.println();
 		
 		Cavalo silver = new Cavalo();
 		silver.amamentar();
 		silver.emitirSom();
+		silver.alimentar();
+		silver.levarVeteriano();
+		System.out.println();
 		
 		Cachorro viraLata = new Cachorro();
 		viraLata.amamentar();
 		viraLata.emitirSom();
+		viraLata.alimentar();
+		viraLata.brincar();
+		viraLata.levarPassear();
+		viraLata.levarVeteriano();
+		System.out.println();
+		
 	}
 
 }

@@ -1,7 +1,6 @@
 package Exercicio_01_ClasseAbstratadaAnimal;
 
-public class Cavalo extends Mamifero{
-
+public class Cavalo extends Mamifero implements AnimalDomesticado{
 	Cavalo(){
 	}
 	
@@ -15,4 +14,13 @@ public class Cavalo extends Mamifero{
 		System.out.println("Relinchando...");
 	}
 
+	@Override
+	public void levarVeteriano() {
+		System.out.println("Estou doente. Minha pata esta doendo... Indo ao médico...");
+	}
+
+	@Override
+	public void alimentar() {
+		System.out.println("Hora do rango...");
+	}
 }
