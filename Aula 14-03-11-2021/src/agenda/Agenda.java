@@ -13,7 +13,7 @@ public class Agenda {
 	public void adicionar() {
 		Contato contato = entrada();
 		contatos.add(contato);
-		// gravar(contato.toString());
+		Arquivo.gravar(contato.toString());
 	}
 	
 	public void listar() {
