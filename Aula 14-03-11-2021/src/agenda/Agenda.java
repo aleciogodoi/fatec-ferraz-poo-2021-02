@@ -11,7 +11,7 @@ public class Agenda {
 		this.carga();
 	}
 	
-	public Contato consultar() {
+	public Contato consultar() throws ContatoException {
 		Contato contato = null;
 		Scanner sc = new Scanner(System.in);
 		System.out.print("\nNome: ");
@@ -20,6 +20,10 @@ public class Agenda {
 		for (Contato c: getContatos()) {
 			if (c.getNome().equalsIgnoreCase(nome) )
 				contato = c;
+		}
+		
+		if (contato == null) {
+			throw new ContatoException("Contato Não Existe!");
 		}
 		return contato;
 	}

@@ -14,7 +14,11 @@ public class Main {
 				agenda.adicionar();
 				break;
 			case 2:
-				System.out.println(agenda.consultar());
+				try {
+					System.out.println(agenda.consultar());
+				} catch (ContatoException e) {
+					e.printStackTrace();
+				}
 				break;
 			case 3:
 				agenda.listar();
