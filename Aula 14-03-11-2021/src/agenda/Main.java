@@ -14,6 +14,7 @@ public class Main {
 				agenda.adicionar();
 				break;
 			case 2:
+				System.out.println(agenda.consultar());
 				break;
 			case 3:
 				agenda.listar();

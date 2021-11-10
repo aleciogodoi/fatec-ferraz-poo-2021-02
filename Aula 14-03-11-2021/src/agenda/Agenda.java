@@ -8,6 +8,36 @@ public class Agenda {
 	
 	Agenda() {
 		contatos = new ArrayList<Contato>();
+		this.carga();
+	}
+	
+	public Contato consultar() {
+		Contato contato = null;
+		Scanner sc = new Scanner(System.in);
+		System.out.print("\nNome: ");
+		String nome = sc.nextLine();
+		
+		for (Contato c: getContatos()) {
+			if (c.getNome().equalsIgnoreCase(nome) )
+				contato = c;
+		}
+		return contato;
+	}
+	
+	public ArrayList<Contato> carga() {
+		ArrayList<String> dados = Arquivo.ler(); 
+		for (String dado: dados) {
+			
+			Contato contato = new Contato();
+			String[] aux = dado.split(",");
+			
+			contato.setId(Integer.valueOf(aux[0]));
+			contato.setNome(aux[1]);
+			contato.setTelefone(aux[2]);
+			
+			contatos.add(contato);
+		}
+		return contatos;
 	}
 	
 	public void adicionar() {
