@@ -1,6 +1,9 @@
 import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.InputMismatchException;
 import java.util.Scanner;
+
+
 
 public class AgendaTarefa {
 	private ArrayList<Tarefa> tarefas;
@@ -70,15 +73,20 @@ public class AgendaTarefa {
 		return tarefas;
 	}
 	
-	public Tarefa consultar() {
+	public Tarefa consultar() throws TarefaException {
 		Tarefa tarefa = null;
 		Scanner sc = new Scanner(System.in);
-		System.out.println("\nNome: ");
+		System.out.print("\nNome: ");
 		String nome = sc.nextLine();
 		for (Tarefa t: this.getTarefas()) {
-			if (t.getNome().equalsIgnoreCase(nome))
+			if (t.getNome() != null && t.getNome().equalsIgnoreCase(nome))
 				tarefa = t;
 		}
+		
+		if (tarefa == null) {
+			throw new TarefaException("Contato Não Existe!");
+		}
+		
 		return tarefa;
 	}
 
@@ -96,6 +104,7 @@ public class AgendaTarefa {
 	}
 	
 	public Tarefa entrada() {
+		boolean flagExecao=false;
 		Tarefa tarefa = new Tarefa();
 		
 		Scanner sc = new Scanner(System.in);
@@ -105,12 +114,32 @@ public class AgendaTarefa {
 		System.out.print("Descricao: ");
 		tarefa.setDescricao(sc.nextLine());
 
-		System.out.print("Dia Inicio: ");
-		int diaIni = sc.nextInt();
-
-		System.out.print("Mes Inicio: ");
-		int mesIni = sc.nextInt();
-
+		int diaIni=0;
+		do {
+			flagExecao = false;
+			try { 
+				System.out.print("Dia Inicio: ");
+				diaIni = sc.nextInt();	
+			} catch (InputMismatchException ex) {
+				flagExecao = true;
+				System.out.println("Dado Dia Inicio Incorreto!");
+				sc.nextLine();
+			}
+		} while (flagExecao);
+		
+		int mesIni = 0;
+		do {
+			flagExecao = false;
+			try {
+				System.out.print("Mes Inicio: ");
+				mesIni = sc.nextInt();
+			} catch (InputMismatchException ex) {
+				flagExecao = true;
+				System.out.println("Dado Mes Inicio Incorreto!");
+				sc.nextLine();
+			}
+		} while (flagExecao);
+		
 		System.out.print("Ano Inicio: ");
 		int anoIni = sc.nextInt();
 		tarefa.setDtInicio(LocalDate.of(anoIni, mesIni, diaIni));

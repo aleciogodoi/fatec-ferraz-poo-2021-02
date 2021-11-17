@@ -1,4 +1,4 @@
-import java.time.LocalDate;
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 
@@ -16,8 +16,14 @@ public class Main {
 				agenda.adicionar();
 				break;
 			case 2:
+				try {
+					System.out.println(agenda.consultar().toString());
+				} catch (TarefaException e) {
+					e.printStackTrace();
+				}
 				break;
 			case 3:
+				agenda.listar();
 				break;
 			}
 			
@@ -25,7 +31,7 @@ public class Main {
 		System.out.println("\nF I M");
 	}
 	public static int menu() {
-		int opcao = 0;
+		int opcao = 9;
 		Scanner scan = new Scanner(System.in);
 		
 		String menu = "1 - Adicionar\n"
@@ -35,7 +41,11 @@ public class Main {
 					+ "Opcao: ";
 		
 		System.out.print(menu);
-		opcao = scan.nextInt();
+		try {
+			opcao = scan.nextInt();
+		} catch (InputMismatchException ex) {
+			System.out.println("Opcao Incorreta!");
+		}
 		return opcao;
 	}
 }
