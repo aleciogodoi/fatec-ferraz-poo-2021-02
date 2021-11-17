@@ -1,2 +1,5 @@
 1,null,null,null,null,null
 2,Trabalho POO,Neste trabalho vamos fazer....,2021-11-10,null,Em execução
+3,Exercícios,Exercícios....,2021-11-10,2021-11-17,Encerrado
+4,X,....,2021-11-17,null,Em andamento
+5,Y,......,2021-11-16,null,Em andamento
